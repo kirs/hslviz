@@ -8,6 +8,16 @@ var clearMarkers = function() {
   markers = [];
 }
 
+
+ var circle ={
+    path: google.maps.SymbolPath.CIRCLE,
+    fillColor: 'red',
+    fillOpacity: .8,
+    scale: 4.5,
+    strokeColor: 'white',
+    strokeWeight: 1
+};
+
 var refreshMap = function(map) {
   console.log("refreshing...")
   $.get('/locations', function(locations) {
@@ -19,7 +29,7 @@ var refreshMap = function(map) {
           position: position,
           map: map,
           title: current.route,
-          icon: "https://storage.googleapis.com/support-kms-prod/SNP_2752125_en_v0"
+          icon: circle
       });
 
       markers.push(marker)
