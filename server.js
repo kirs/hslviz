@@ -32,22 +32,19 @@ var getRoutes = function(callback) {
   })
 }
 
+app.set('port', (process.env.PORT || 3001));
+app.use(express.static(__dirname + '/static'));
+
 app.get('/locations', function (req, res) {
   getRoutes(function(result) {
     res.json(result)
   })
 })
 
-app.use(express.static(__dirname + '/static'));
-
 app.get('/', function (req, res) {
   res.sendfile('public/index.html');
 })
 
-var server = app.listen(3001, function () {
-  var host = server.address().address
-  var port = server.address().port
-
-  console.log('Example app listening at http://%s:%s', host, port)
-
-})
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'));
+});
