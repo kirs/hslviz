@@ -14,5 +14,8 @@
     "start": "node server.js"
   },
   "author": "Kir Shatrov",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "engines": {
+    "iojs": "1.0.x"
+  }
 }
