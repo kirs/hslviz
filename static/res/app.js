@@ -8,14 +8,13 @@ var clearMarkers = function() {
   markers = [];
 }
 
-
- var circle ={
-    path: google.maps.SymbolPath.CIRCLE,
-    fillColor: 'red',
-    fillOpacity: .8,
-    scale: 4.5,
-    strokeColor: 'white',
-    strokeWeight: 1
+var circle = {
+  path: google.maps.SymbolPath.CIRCLE,
+  fillColor: 'red',
+  fillOpacity: .8,
+  scale: 4.5,
+  strokeColor: 'white',
+  strokeWeight: 1
 };
 
 var refreshMap = function(map) {
@@ -38,9 +37,9 @@ var refreshMap = function(map) {
 }
 
 var initApp = function() {
-  var center = new google.maps.LatLng(60.167212, 24.973745);
+  var center = new google.maps.LatLng(60.187212, 24.953745);
   var mapOptions = {
-    zoom: 12,
+    zoom: 13,
     center: center
   }
 
