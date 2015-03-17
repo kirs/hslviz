@@ -10,12 +10,51 @@
         margin: 0px;
         padding: 0px
       }
+      .controls {
+        background: #FFF;
+        border-bottom: #000 1px solid;
+        position: absolute;
+        z-index: 9999;
+        width: 100%;
+        height: 36px;
+      }
+      .filters {
+        padding: 10px;
+        float: left;
+      }
+      .filters .checkbox {
+        display: inline-block;
+      }
+      .status {
+        padding: 10px;
+        float: right;
+      }
+      .last-update {
+        color: red;
+        font-weight: 16px;
+      }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="/res/app.js"></script>
   </head>
   <body>
-    <div id="map-canvas"></div>
+    <div class="controls">
+      <div class="filters js-filters">
+        <div class="checkbox">
+          <input type="checkbox" name="tram" class="js-checkbox-filter" disabled="disabled" data-context="tram" id="tram_checkbox"/> <label for="tram_checkbox">Trams</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="metro" class="js-checkbox-filter" disabled="disabled" data-context="metro" id="metro_checkbox"/> <label for="metro_checkbox">Metro</label>
+        </div>
+
+        <input type="submit" name="submit" class="js-refresh" value="Refresh"/>
+      </div>
+
+      <div class="status">
+        Last sync: <span class="js-last-update last-update">never</span>
+      </div>
+    </div>
+    <div class="js-map" id="map-canvas"></div>
   </body>
 </html>
