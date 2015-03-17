@@ -40,7 +40,7 @@ var updateStatus = function() {
 var formatCurrent = function(current) {
   if(current.stops) {
     var stops = current.stops.map(function(map) {
-      var sections = map.match(/(\d+)_(\d+)_(.+)/);
+      var sections = map.match(/(\d+)_(.{1,2})_(.+)/);
 
       if(sections) {
         var normalized = sections[3].replace("_normal", "");
